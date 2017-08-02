@@ -292,34 +292,6 @@
                     <field name="VAR">bgHeight</field>
                   </block>
                 </value>
-                <next>
-                  <block type="lb_text_textspeed" id="_Lh=|MD.2%4fIV{_qSwM">
-                    <field name="SPEED">FAST</field>
-                    <next>
-                      <block type="lb_text_settext" id="Y1=mXI2hyY%j(cp]w)3!">
-                        <field name="PIN">OUT1</field>
-                        <value name="TEXT">
-                          <shadow type="lb_text_text" id="kAdd,UD}z9`4jW_O2{)@">
-                            <field name="TEXT">Hello World</field>
-                          </shadow>
-                          <block type="variables_get" id="yccP[W!{HWHY6:V#)rm8">
-                            <field name="VAR">bgHeight</field>
-                          </block>
-                        </value>
-                        <next>
-                          <block type="lb_timing_wait" id="(Uvcq2F97WfrVRIx(_#0">
-                            <field name="UNITS">S</field>
-                            <value name="VALUE">
-                              <shadow type="lb_math_number" id="9)=DZ=#=s%`euYLgi)[6">
-                                <field name="NUM">1</field>
-                              </shadow>
-                            </value>
-                          </block>
-                        </next>
-                      </block>
-                    </next>
-                  </block>
-                </next>
               </block>
             </next>
           </block>
@@ -385,7 +357,7 @@
                         <field name="UNITS">S</field>
                         <value name="VALUE">
                           <shadow type="lb_math_number" id="MG6:a#Gh6q}5yL~D*.Y]">
-                            <field name="NUM">1</field>
+                            <field name="NUM">0.25</field>
                           </shadow>
                         </value>
                         <next>
