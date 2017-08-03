@@ -314,8 +314,24 @@
               </block>
             </value>
             <value name="B">
-              <block type="lb_math_number" id=":)Fx0:QnwO#Iw`z}Sza%">
-                <field name="NUM">7</field>
+              <block type="lb_math_operators" id="Eq7szjQnFw=#l*M$B76z">
+                <field name="OP">MINUS</field>
+                <value name="A">
+                  <shadow type="lb_math_number" id="xBP7_,?qR2;a)z1Udu9Q">
+                    <field name="NUM">2</field>
+                  </shadow>
+                  <block type="lb_math_number" id=":)Fx0:QnwO#Iw`z}Sza%">
+                    <field name="NUM">7</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="lb_math_number" id="WCAMq.{SU^GLd?D?}A[]">
+                    <field name="NUM">2</field>
+                  </shadow>
+                  <block type="variables_get" id="#C:nznm]0wWduca:m=tu">
+                    <field name="VAR">p3</field>
+                  </block>
+                </value>
               </block>
             </value>
           </block>
@@ -409,6 +425,35 @@
                                     </value>
                                   </block>
                                 </statement>
+                                <next>
+                                  <block type="lb_logic_if" id="hSxCg,r7+s!KzMa~3H]G">
+                                    <value name="IF">
+                                      <block type="lb_logic_comparison" id="iSm_*KaJavMmk/sfGI=F">
+                                        <field name="OP">LT</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="^4OG-;.%ewPA!/m5R`dG">
+                                            <field name="VAR">height</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="lb_math_number" id="p8VZ/AB/9es;:t_3t!%4">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO">
+                                      <block type="variables_set" id="bN^=lMPYclWWQRNu7s#b">
+                                        <field name="VAR">height</field>
+                                        <value name="VALUE">
+                                          <block type="lb_math_number" id="sxu8[H}dm^$]/{`{m](a">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </next>
                               </block>
                             </next>
                           </block>
@@ -422,8 +467,82 @@
           </block>
         </statement>
         <next>
-          <block type="procedures_callnoreturn" id="kM|8:2M6R_VWwDD:,OC~">
-            <mutation name="restart"></mutation>
+          <block type="variables_set" id="LQugw;J07~gzx?[Ihu+0">
+            <field name="VAR">bg</field>
+            <value name="VALUE">
+              <block type="lb_visual_allpixels" id="EX6UTjc=W)2rv:ywM{TK">
+                <value name="COLOR">
+                  <shadow type="lb_color" id="ME[q_Ur#(:(R`B53s3Eq">
+                    <field name="COLOR">#ff0000</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="lb_visual_set" id="c{tdkDjlU71N7;HGjPj+">
+                <field name="BITSNAP">OUT1</field>
+                <value name="PIXMAP">
+                  <block type="variables_get" id="bjN8t}hj(xmZ5y$d=C-f">
+                    <field name="VAR">bg</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="lb_timing_wait" id="VzY{VW.[8WeJ$rKZ2Etf">
+                    <field name="UNITS">S</field>
+                    <value name="VALUE">
+                      <shadow type="lb_math_number" id="mgh2g:/Ozs;owc-{OS*m">
+                        <field name="NUM">0.5</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="lb_loop_repeat" id="4,TtdbCoZx,e)0$VfoZ4">
+                        <value name="TIMES">
+                          <shadow type="lb_math_number" id="~F7|C`V4F@@0Q-[pPJaq">
+                            <field name="NUM">7</field>
+                          </shadow>
+                        </value>
+                        <statement name="DO">
+                          <block type="lb_visual_move" id="Vnz+,g}jdr3hv^8S?LJ3">
+                            <field name="VAR">bg</field>
+                            <field name="DIRECTION">DOWN</field>
+                            <value name="AMOUNT">
+                              <shadow type="lb_math_number" id="*V|,709:(Fzq41msK-lL">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="lb_visual_set" id=":b1mfXk!/,!aO(vWlSXg">
+                                <field name="BITSNAP">OUT1</field>
+                                <value name="PIXMAP">
+                                  <block type="variables_get" id="~RUYc]ucibhQd~NzvKX,">
+                                    <field name="VAR">bg</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="lb_timing_wait" id="Ko:.rQ?+xJyt7O=,.[U,">
+                                    <field name="UNITS">S</field>
+                                    <value name="VALUE">
+                                      <shadow type="lb_math_number" id="RFaw,HM-],+i42Hb$=mC">
+                                        <field name="NUM">0.1</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="procedures_callnoreturn" id="kM|8:2M6R_VWwDD:,OC~">
+                            <mutation name="restart"></mutation>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
         </next>
       </block>
@@ -433,28 +552,33 @@
     <field name="NAME">moveBg</field>
     <comment pinned="false" h="80" w="160">Describe this function...</comment>
     <statement name="STACK">
-      <block type="procedures_callnoreturn" id="6/Rf4lGLICYY#7)|0P-N">
-        <mutation name="rand"></mutation>
+      <block type="procedures_callnoreturn" id="cTL,^;DdPvEo|,2U~b]t">
+        <mutation name="moveBgTracking"></mutation>
         <next>
-          <block type="lb_visual_move" id="aQ,AvgA(?^YLaF//Y?hV">
-            <field name="VAR">bg</field>
-            <field name="DIRECTION">LEFT</field>
-            <value name="AMOUNT">
-              <shadow type="lb_math_number" id="|4zgS6`s~XnPF/0.v(5)">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
+          <block type="procedures_callnoreturn" id="6/Rf4lGLICYY#7)|0P-N">
+            <mutation name="rand"></mutation>
             <next>
-              <block type="variables_set" id="H5!K}m:$L=-By{M7v?cA">
-                <field name="VAR">recHeight</field>
-                <value name="VALUE">
-                  <block type="lb_math_number" id="o+yZ-{9n:^#pr:W38Y5u">
-                    <field name="NUM">0</field>
-                  </block>
+              <block type="lb_visual_move" id="aQ,AvgA(?^YLaF//Y?hV">
+                <field name="VAR">bg</field>
+                <field name="DIRECTION">LEFT</field>
+                <value name="AMOUNT">
+                  <shadow type="lb_math_number" id="|4zgS6`s~XnPF/0.v(5)">
+                    <field name="NUM">1</field>
+                  </shadow>
                 </value>
                 <next>
-                  <block type="procedures_callnoreturn" id="h3-|w#a;A/}E9F~SWM$e">
-                    <mutation name="drawHeight"></mutation>
+                  <block type="variables_set" id="H5!K}m:$L=-By{M7v?cA">
+                    <field name="VAR">recHeight</field>
+                    <value name="VALUE">
+                      <block type="lb_math_number" id="o+yZ-{9n:^#pr:W38Y5u">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="h3-|w#a;A/}E9F~SWM$e">
+                        <mutation name="drawHeight"></mutation>
+                      </block>
+                    </next>
                   </block>
                 </next>
               </block>
@@ -713,6 +837,80 @@
             </next>
           </block>
         </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="IU8tY:^|H%oIO~f8Kz`o" x="1125" y="975">
+    <field name="NAME">moveBgTracking</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="-e!2E^4H?vGCA_);t!s~">
+        <field name="VAR">p0</field>
+        <value name="VALUE">
+          <block type="variables_get" id="48)ma%NL,RZ2hU[W9SH7">
+            <field name="VAR">p1</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="o[aQWL:D_{C8}!ouKaw-">
+            <field name="VAR">p1</field>
+            <value name="VALUE">
+              <block type="variables_get" id="}T([O4)l7{9C(d[~q^v)">
+                <field name="VAR">p2</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="TPrL4UTcjWOI?%4g.jyj">
+                <field name="VAR">p2</field>
+                <value name="VALUE">
+                  <block type="variables_get" id="!d,ptN[6k5ZN?]F-G/(5">
+                    <field name="VAR">p3</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="Dk/lUb;pJ%eqBzBKWzT1">
+                    <field name="VAR">p3</field>
+                    <value name="VALUE">
+                      <block type="variables_get" id="0V(=2G}uphI|p+edZQ*S">
+                        <field name="VAR">p4</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="Lq:RSj8Du;.uT/^JzXWe">
+                        <field name="VAR">p4</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="to[cnu--}y?J0*7|azBq">
+                            <field name="VAR">p5</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="5^]dguZ_Lv7k%~M{M(FD">
+                            <field name="VAR">p5</field>
+                            <value name="VALUE">
+                              <block type="variables_get" id="lq^.KRDA7;XIPX.,SMq:">
+                                <field name="VAR">p6</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set" id="%ddRU$$%DLZVv?uT/,(]">
+                                <field name="VAR">p6</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="d5reXa;~x4ujvoR;MC-R">
+                                    <field name="VAR">bgHeight</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
       </block>
     </statement>
   </block>
